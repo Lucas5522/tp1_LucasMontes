@@ -13,5 +13,6 @@ public class Main {
 	float promedio = (num1 + num2 + num3 + num4 + num5) / 5.0f;	
 		System.out.println("el promedio de los numeros es:"+promedio);
 		
+		
 	}
 }
