@@ -12,7 +12,7 @@ public class Main {
 		System.out.println("ingrese un numero entre [0,10] para hacer su factorial:");
 		num = scanner.nextInt();
 		if (num >10) {
-			System.out.println("ingrese nuevamente un valor entre 1 y 10");
+			System.out.println("ingrese nuevamente un valor entre 0 y 10");
 		}
 		} while (num > 10  );
 		System.out.println("el numero ingresado es: " + num);
