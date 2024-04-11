@@ -10,9 +10,6 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		int op;
 		do {
-			//System.out.println("Opcion 1: Ingresar datos del empleado");
-			//System.out.println("Opcion 2: Mostrar datos del empeado");
-			System.out.println("Opcion 3: Aumentar el salario");
 			System.out.println("opcion 4: Salir:");
 			System.out.println("Ingresar opcion:");
 			op = scanner.nextInt();
