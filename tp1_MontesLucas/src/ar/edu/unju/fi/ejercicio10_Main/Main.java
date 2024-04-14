@@ -1,6 +1,6 @@
-package ar.edu.unju.fi.ejercicio9_Main;
+package ar.edu.unju.fi.ejercicio10_Main;
 
-import ar.edu.unju.fi.ejercicio9_Model.Pizza;
+import ar.edu.unju.fi.ejercicio10_Model.Pizza;
 
 public class Main {
 
