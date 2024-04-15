@@ -1,6 +1,6 @@
 package ar.edu.unju.fi.ejercicio9_Model;
 
-public class Model {
+public class Producto {
 	private String nombre;
 	private int codigo;
 	private double precio;
@@ -19,7 +19,7 @@ public class Model {
 		System.out.println("El precio del producto es: " + total1);
 	}
 	
-	public Model(String nombre, int codigo, double precio, int descuento, double total) {
+	public Producto(String nombre, int codigo, double precio, int descuento, double total) {
 		super();
 		this.nombre = nombre;
 		this.codigo = codigo;
@@ -28,7 +28,7 @@ public class Model {
 		this.total = total;
 	}
 	
-	public Model() {
+	public Producto() {
 		// TODO Auto-generated constructor stub
 	}
 

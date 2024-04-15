@@ -2,14 +2,14 @@ package ar.edu.unju.fi.ejercicio9_Main;
 
 import java.util.Scanner;
 
-import ar.edu.unju.fi.ejercicio9_Model.Model;
+import ar.edu.unju.fi.ejercicio9_Model.Producto;
 
 public class Main {
 	public static void main(String[] args) {
 		int continuar= 0;
 	do {
 		Scanner scanner = new Scanner(System.in);
-		Model model = new Model();
+		Producto model = new Producto();
 		System.out.println("Ingrese nombre del producto: ");
 		String nombre =scanner.next();
 		System.out.println("Ingrese codigo del producto: ");
