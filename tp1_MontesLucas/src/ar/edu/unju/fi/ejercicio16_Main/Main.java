@@ -19,7 +19,7 @@ public class Main {
 		System.out.println("******************************");
 		//muestra lista 
 		while (num < 5) {
-			System.out.println(lista[num]);
+			System.out.println("posicion: " + num + " nombre: " + lista[num]);
 			num++;
 		}
 		num=0;
@@ -28,24 +28,18 @@ public class Main {
 		System.out.println("Ingrese posicion a eliminar");
 		valor = scanner.nextByte();
 		do {
-			if (otro == valor) {
-				lista[otro-1]= null;
+			if (otro >= valor) {
+				lista[otro]= lista[otro+1];
 			}
-			
 			otro++;
-		} while (otro < lista.length);
+		} while (otro < lista.length-1);
+		lista[lista.length-1] = " ";
 		System.out.println("***********************************");
 		//mostar lista de nuevo
 		while (num < lista.length) {
 			System.out.println(lista[num]);
 			num++;
 		}
-		
-		
-		
-		
-		
-		
 		
 		
 		
