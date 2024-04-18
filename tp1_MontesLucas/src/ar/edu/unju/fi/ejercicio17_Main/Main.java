@@ -29,14 +29,14 @@ public class Main {
 			System.out.println("Ingrese opcion");
 			op = scanner.nextInt();
 			switch (op) {
-			case 1:preCargaJugador();
+			case 1: CargaJugador();
 			break;
 			case 2: mostrarJugador();
 			break;
 			case 3: ordenarApellido();
 			break;
-			case 4: 
-			case 5: 
+			case 4: modificarJugador();
+			case 5: eliminarJugador();
 			case 6: 
 			case 7: 
 			case 8: System.out.println("Fin del programa");
@@ -54,31 +54,33 @@ public class Main {
 			
 			
 		} while (op!=8);
-		
-		
-		
-		
-		
-		
 
 	}
 	
-	public static void preCargaJugador() {
+	public static void CargaJugador() {
 		if(jugador == null) {
 				jugador = new ArrayList<>(); 
 		}
-		jugador.add(new Jugador("Tenedor", "erro", "19-07-1995", "Argentino", 1.80f, 79f, "defensa"));
-		jugador.add(new Jugador("Cuchara", "Mamani", "13-09-1990", "Argentino", 1.70f, 70f, "arquero"));
-		jugador.add(new Jugador("Leo", "Mes", "19-07-1995", "Argentino", 1.50f, 70f, "delantero"));
-		jugador.add(new Jugador("Ector", "Pala", "19-07-1995", "Argentino", 1.90f, 85f, "defensa"));
+		System.out.println("Ingrese nombre del jugador: ");
+		String nom= scanner.next();
+		System.out.println("Ingrese apellido del jugador: ");
+		String ap= scanner.next();
+		System.out.println("Ingrese Fecha de nacimiendo del jugador(dia-mes-año): ");
+		String fech= scanner.next();
+		System.out.println("Ingrese nacionalidad del jugador: ");
+		String nac= scanner.next();
+		System.out.println("Ingrese altura del jugador: ");
+		float alt= scanner.nextFloat();
+		System.out.println("Ingrese peso del jugador: ");
+		float pes= scanner.nextFloat();
+		System.out.println("Ingrese posicion del jugador(delantero,medio,defensa,arquero): ");
+		String pos = scanner.next();
+		jugador.add(new Jugador(nom, ap, fech, nac, alt, pes, pos));
 	}
 	
 	public static void mostrarJugador() {
 		System.out.println("*************LISTA DE JUGADORES****************");
 		jugador.forEach(j->System.out.println(j));
-		/*for(Jugador jug:jugador) {
-			System.out.println("Nombre: " + jug.getNombre());
-		}*/
 	}
 	
 	public static Jugador buscarJugador(String nomb, String apell) {
@@ -105,18 +107,31 @@ public class Main {
 		System.out.println("*************Modificar jugador*****************");
 		System.out.println("Ingrese nombe del jugador a modificiar: ");
 		String nom = scanner.next();
-		System.out.println("Ingrese nombe del jugador a modificiar: ");
+		System.out.println("Ingrese apellido del jugador a modificiar: ");
 		String ape = scanner.next();
 		for(Jugador jug: jugador) {
 			if ( jug.getNombre().equals(nom) && jug.getApellido().equals(ape)) {
-				System.out.println("Ingrese nuevo nombre: ");
-				String nn = scanner.next();
-				System.out.println("ingrese nuevo apellido: ");
-				String ap = scanner.next();
-				Jugador jug = buscarJugador(nom, ape);
+				System.out.println("Ingrese nombre del jugador: ");
+				String nn= scanner.next();
+				System.out.println("Ingrese apellido del jugador: ");
+				String np= scanner.next();
+				System.out.println("Ingrese Fecha de nacimiendo del jugador(dia-mes-año): ");
+				String nf= scanner.next();
+				System.out.println("Ingrese nacionalidad del jugador: ");
+				String nc= scanner.next();
+				System.out.println("Ingrese altura del jugador: ");
+				float na= scanner.nextFloat();
+				System.out.println("Ingrese peso del jugador: ");
+				float npe= scanner.nextFloat();
+				System.out.println("Ingrese posicion del jugador(delantero,medio,defensa,arquero): ");
+				String npo= scanner.next();
 				jug.setNombre(nn);
-				jug.setApellido(ap);
-				
+				jug.setApellido(np);
+				jug.setFechaNacimiento(nf);
+				jug.setNacionalidad(nc);
+				jug.setEstatura(na);
+				jug.setPeso(npe);
+				jug.setPosicion(npo);
 			}
 		}
 		
@@ -124,6 +139,9 @@ public class Main {
 		
 	}
 	
-	
+	public static void eliminarJugador() {
+		
+	}
 
 }
+ 
