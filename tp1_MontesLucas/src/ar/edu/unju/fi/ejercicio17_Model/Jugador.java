@@ -13,15 +13,6 @@ public class Jugador {
 	private float peso;
 	private String posicion;
 	Scanner scanner = new Scanner(System.in);
-	
-	public void calcularEdad() {
-		LocalDate fechaActual = LocalDate.now();
-		LocalDate fecha = LocalDate.parse(fechaNacimiento);
-		Period anio = Period.between(fecha, fechaActual);
-		int año = anio.getYears();
-		System.out.println("Edad: " + año);
-	}	
-	
 		
 	@Override
 	public String toString() {
@@ -45,66 +36,53 @@ public class Jugador {
 		this.posicion = posicion;
 	}
 
-
 	public String getNombre() {
 		return nombre;
 	}
-
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-
 	public String getApellido() {
 		return apellido;
 	}
-
 
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
 
-
 	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
-
 
 	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-
 	public String getNacionalidad() {
 		return nacionalidad;
 	}
-
 
 	public void setNacionalidad(String nacionalidad) {
 		this.nacionalidad = nacionalidad;
 	}
 
-
 	public float getEstatura() {
 		return estatura;
 	}
-
 
 	public void setEstatura(float estatura) {
 		this.estatura = estatura;
 	}
 
-
 	public float getPeso() {
 		return peso;
 	}
 
-
 	public void setPeso(float peso) {
 		this.peso = peso;
 	}
-
 
 	public String getPosicion() {
 		return posicion;
@@ -115,5 +93,16 @@ public class Jugador {
 		this.posicion = posicion;
 	}	
 	
+	public void calcularEdad() {
+		LocalDate fechaActual = LocalDate.now();
+		LocalDate fecha = LocalDate.parse(fechaNacimiento);
+		Period anio = Period.between(fecha, fechaActual);
+		int año = anio.getYears();
+		System.out.println("Edad: " + año);
+	}	
+	
+	
 	
 }
+
+
