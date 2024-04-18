@@ -2,6 +2,7 @@ package ar.edu.unju.fi.ejercicio17_Main;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import ar.edu.unju.fi.ejercicio17_Model.Jugador;
@@ -36,9 +37,13 @@ public class Main {
 			case 3: ordenarApellido();
 			break;
 			case 4: modificarJugador();
+			break;
 			case 5: eliminarJugador();
-			case 6: 
-			case 7: 
+			break;
+			case 6: cantidadJugador();
+			break;
+			case 7: jugadorNacionalidad();
+			break;
 			case 8: System.out.println("Fin del programa");
 			break;
 			
@@ -140,8 +145,38 @@ public class Main {
 	}
 	
 	public static void eliminarJugador() {
-		
+		Iterator<Jugador> iterator = jugador.iterator();
+		System.out.println("Ingrese nombre del jugador a eliminar: ");
+		String nomb= scanner.next();
+		System.out.println("Ingrese apellido del jugador a eliminar: ");
+		String apel= scanner.next();
+		while (iterator.hasNext()) {
+			Jugador jug = iterator.next();
+			if(jug.getNombre().equals(nomb) && jug.getApellido().equals(apel)){
+				iterator.remove();
+			}
+			
+		}
+	
 	}
 
+	public static void cantidadJugador() {
+		System.out.println("Cantidad de jugadores: " + jugador.size() + " jugadores" );
+	}
+	
+	public static void jugadorNacionalidad() {
+		System.out.println("Ingrese la nacionalidad: ");
+		String nac= scanner.next();
+		int num=0;
+		for(Jugador jug: jugador) {
+			if ( jug.getNacionalidad().equals(nac)) {
+				num++;
+			}
+		}
+		System.out.println("La cantidad de jugadores que pertenecena la misma nacionalidad son: " + num + "- jugadores");
+	}
+	
+	
+	
 }
  
