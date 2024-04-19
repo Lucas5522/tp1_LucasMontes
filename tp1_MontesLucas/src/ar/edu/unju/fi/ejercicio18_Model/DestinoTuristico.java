@@ -11,7 +11,7 @@ public class DestinoTuristico {
 		
 	}
 
-	public DestinoTuristico(int codigo, String nombre, double precio, Pais pais, int cantidadDias) {
+	public DestinoTuristico(int codigo, String nombre, double precio,Pais pais, int cantidadDias) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;

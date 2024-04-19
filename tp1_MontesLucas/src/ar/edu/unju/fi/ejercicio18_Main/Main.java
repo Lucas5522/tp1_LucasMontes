@@ -10,15 +10,14 @@ import ar.edu.unju.fi.ejercicio18_Model.Pais;
 
 public class Main {
 	private static Scanner scanner;
-	private static List<Pais> pais;
+	private static List<Pais> paises;
 	private static List<DestinoTuristico>destuc;
 	
 	public static void main(String[] args) {
 		int op;
 		boolean band = false;
-		destuc = new ArrayList<>();
 		scanner = new Scanner(System.in);
-		
+		preagregarPais();
 		do {
 			System.out.println("****************************************************************************");
 			System.out.println("opcion 1: Alta del destino turistico");
@@ -39,7 +38,7 @@ public class Main {
 			break;
 			case 2:
 				if (band== true) {
-					;
+					mostrarDestinos();
 				}else {
 					System.out.println("Primero debe ingresar un pais");
 				}
@@ -90,33 +89,60 @@ public class Main {
 
 	}
 	
-	public static void agregarPais() {
-		if (pais == null) {
-			pais = new ArrayList<>();
-		}
-		
-		System.out.println("Ingrese pais: ");
-		String pa= scanner.next();
-		System.out.println("Ingrese codigo: ");
-		int cod= scanner.nextInt();
-		pais.add(new Pais(cod, pa));	
-		
-	}
+	
 	public static void agregarDestTur() {
-		DestinoTuristico destuc = new DestinoTuristico();
+		if (destuc == null) {
+			destuc = new ArrayList<>();
+		}
 		System.out.println("Ingrese codigo: ");
-		destuc.setCodigo(scanner.nextInt());
+		int codigo = scanner.nextInt();
 		System.out.println("Ingrese nombre: ");
-		destuc.setNombre(scanner.next());
+		String nom= scanner.next();
 		System.out.println("Ingrese precio: ");
-		destuc.setPrecio(scanner.nextDouble());
-		System.out.println("Ingrese pais");
-		String paiss = scanner.next();
+		double prec = scanner.nextDouble(); 
+		System.out.println("Ingrese codigopais: ");
+		int codigoPais = scanner.nextInt();
+		Pais pais = getPaisBy(codigoPais);
 		System.out.println("Ingrese cantidad de dias: ");
-		destuc.setCantidadDias(scanner.nextInt());
+		int candi = scanner.nextInt();
+		destuc.add(new DestinoTuristico(codigo, nom, prec, pais, candi));
+	}
+	
+	private static Pais getPaisBy(int codigoPais) {
+		for(Pais pais : paises) {
+			if (pais.getCodigo() == codigoPais) {
+				return pais;
+			}
+			
+			
+		}
+		return null;
+	}
+
+
+	public static void preagregarPais() {
+		if (paises == null) {
+			paises = new ArrayList<>();
+		}
+		/*System.out.println("Ingrese codigo: ");
+		int codi = scanner.nextInt();
+		System.out.println("Ingrese nombre: ");
+		String nomb = scanner.next();*/
+		paises.add(new Pais(1, "Argentina"));
+		paises.add(new Pais(2, "Chile"));
+	}
+		
+		
+	public static void mostrarDestinos() {
+		System.out.println("*************LISTA DE DESTINOS TURISTICOS****************");
+		destuc.forEach(d->System.out.println(d));
+		
+		
 		
 	}
 	
+			
+		
 	
 	
 	
