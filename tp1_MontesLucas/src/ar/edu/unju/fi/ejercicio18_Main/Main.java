@@ -204,7 +204,7 @@ public class Main {
 			int codig = scanner.nextInt();
 			for(DestinoTuristico destino : destuc) {
 				for(Pais pais : paises) {
-					if(pais.getCodigo() == codig) {
+					if(pais.getCodigo() == codig && codig == destino.getCodigo()) {
 						System.out.println("Destino turistico: " + destino.getNombre());
 					}
 				}
