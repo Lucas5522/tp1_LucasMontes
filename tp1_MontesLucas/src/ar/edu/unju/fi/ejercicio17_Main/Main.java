@@ -13,9 +13,10 @@ public class Main {
 	
 	public static void main(String[] args) {
 		int op;
+		boolean band = false;
 		scanner = new Scanner(System.in);
 		
-		
+		try {
 		do {
 			System.out.println("*********************************************************************************");
 			System.out.println("opcion 1: Alta del jugador");
@@ -31,18 +32,44 @@ public class Main {
 			op = scanner.nextInt();
 			switch (op) {
 			case 1: CargaJugador();
+					band = true;
 			break;
-			case 2: mostrarJugador();
+			case 2:
+				if (band== true) {
+					mostrarJugador();
+				}else {
+					System.out.println("Primero debe ingresar un jugador");
+				}
 			break;
-			case 3: ordenarApellido();
+			case 3: 
+				if (band== true) {
+					ordenarApellido();	
+				}else {
+					System.out.println("Primero debe ingresar un jugador");
+				}
 			break;
-			case 4: modificarJugador();
+			case 4: 
+				if (band== true) {
+					modificarJugador();
+				}else {
+					System.out.println("Primero debe ingresar un jugador");
+				}
 			break;
-			case 5: eliminarJugador();
+			case 5: 
+				if (band== true) {
+					eliminarJugador();
+				}else {
+					System.out.println("Primero debe ingresar un jugador");
+				}
 			break;
 			case 6: cantidadJugador();
 			break;
-			case 7: jugadorNacionalidad();
+			case 7: 
+				if (band== true) {
+					jugadorNacionalidad();	
+				}else {
+					System.out.println("Primero debe ingresar un jugador");
+				}
 			break;
 			case 8: System.out.println("Fin del programa");
 			break;
@@ -52,20 +79,17 @@ public class Main {
 				System.out.println("Ingrece una opcion correcta");
 			}
 			
-			
-			
-			
-			
-			
-			
-		} while (op!=8);
-
-	}
 	
+		} while (op!=8);
+		}catch (Exception e) {
+			System.out.println("Reinice e ingrese una opcion valida");
+		}
+	}
 	public static void CargaJugador() {
 		if(jugador == null) {
 				jugador = new ArrayList<>(); 
 		}
+		try{
 		System.out.println("Ingrese nombre del jugador: ");
 		String nom= scanner.next();
 		System.out.println("Ingrese apellido del jugador: ");
@@ -81,6 +105,11 @@ public class Main {
 		System.out.println("Ingrese posicion del jugador(delantero,medio,defensa,arquero): ");
 		String pos = scanner.next();
 		jugador.add(new Jugador(nom, ap, fech, nac, alt, pes, pos));
+		}catch (Exception e) {
+			System.out.println("Alguno de los datos es incorrecto, ingrese de nuevo a la opcion");
+		}
+			
+		
 	}
 	
 	public static void mostrarJugador() {
