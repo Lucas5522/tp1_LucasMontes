@@ -202,8 +202,8 @@ public class Main {
 		try {
 			System.out.println("Ingrese codigo del pais: ");
 			int codig = scanner.nextInt();
-			for(DestinoTuristico destino : destuc) {
 				for(Pais pais : paises) {
+				  for(DestinoTuristico destino : destuc) {
 					if(pais.getCodigo() == codig && codig == destino.getCodigo()) {
 						System.out.println("Destino turistico: " + destino.getNombre());
 					}
